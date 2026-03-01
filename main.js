@@ -1,5 +1,56 @@
+let largeTextFileURL = "https://apiacoa.org/publications/teaching/datasets/google-10000-english.txt"
+let afterDarkURL = "https://www.cs.cmu.edu/~biglou/resources/bad-words.txt"
 
-let theList = ["sun", "oak", "mist", "hope", "glide", "trace", "crisp", "badge", "quilt", "planet", "garden", "shrink", "jovial", "expand", "texture"]
+let theList = [
+    "scanned",
+    "reflections",
+    "hunger",
+    "mariah",
+    "sic",
+    "municipality",
+    "usps",
+    "joyce",
+    "detective",
+    "surgeon",
+    "cement",
+    "experiencing",
+    "fireplace",
+    "endorsement",
+    "bg",
+    "planners",
+    "disputes",
+    "textiles",
+    "missile",
+    "intranet",
+    "closes",
+    "seq",
+    "psychiatry",
+    "persistent",
+    "deborah",
+    "conf",
+    "marco",
+    "assists",
+    "summaries",
+    "glow",
+    "gabriel",
+    "auditor",
+    "wma",
+    "aquarium",
+    "violin",
+    "prophet",
+    "cir",
+    "bracket",
+    "looksmart",
+    "isaac",
+    "oxide",
+    "oaks",
+    "magnificent",
+    "erik",
+    "colleague",
+    "naples"
+]
+
+
 
 function getRandomNumber(min, max) {
   return parseInt(Math.random() * (max - min) + min);
@@ -66,7 +117,7 @@ function isLetterCorrect(index, letter, correctWord) {
 
 window.addEventListener("load",e=>{
     let theWord = theList[getRandomNumber(0, theList.length-1)]
-    let numberOfGuesses = 5
+    let numberOfGuesses = 5 
     console.log(theWord)
     let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
     window.data = [] 
