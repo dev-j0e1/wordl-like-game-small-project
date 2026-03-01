@@ -151,6 +151,9 @@ window.addEventListener("load",e=>{
                     document.querySelector("#answer").innerText = theWord
                 }
                 currentGuess.complete = true
+                if (currentGuess.letters.join('').toLowerCase() === theWord) {
+                    document.querySelector("#answer").innerText = theWord
+                }
             }
         }
 
