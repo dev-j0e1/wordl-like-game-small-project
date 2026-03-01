@@ -1,54 +1,59 @@
 let largeTextFileURL = "https://apiacoa.org/publications/teaching/datasets/google-10000-english.txt"
 let afterDarkURL = "https://www.cs.cmu.edu/~biglou/resources/bad-words.txt"
 
+// AI generated slop words until I can figure out how to do the .fetch on a word file...
 let theList = [
-    "scanned",
-    "reflections",
-    "hunger",
-    "mariah",
-    "sic",
-    "municipality",
-    "usps",
-    "joyce",
-    "detective",
-    "surgeon",
-    "cement",
-    "experiencing",
-    "fireplace",
-    "endorsement",
-    "bg",
-    "planners",
-    "disputes",
-    "textiles",
-    "missile",
-    "intranet",
-    "closes",
-    "seq",
-    "psychiatry",
-    "persistent",
-    "deborah",
-    "conf",
-    "marco",
-    "assists",
-    "summaries",
-    "glow",
-    "gabriel",
-    "auditor",
-    "wma",
-    "aquarium",
-    "violin",
-    "prophet",
-    "cir",
-    "bracket",
-    "looksmart",
-    "isaac",
-    "oxide",
-    "oaks",
-    "magnificent",
-    "erik",
-    "colleague",
-    "naples"
-]
+  "sky",    // 3
+  "book",   // 4
+  "apple",  // 5
+  "stamp",  // 5
+  "red",    // 3
+  "cloud",  // 5
+  "frog",   // 4
+  "drink",  // 5
+  "stone",  // 5
+  "joy",    // 3
+  "dance",  // 5
+  "milk",   // 4
+  "track",  // 5
+  "leaf",   // 4
+  "crane",  // 5
+  "pitch",  // 5
+  "fly",    // 3
+  "great",  // 5
+  "note",   // 4
+  "mouse",  // 5
+  "wide",   // 4
+  "grass",  // 5
+  "chip",   // 4
+  "pond",   // 4
+  "fire",   // 4
+  "hat",    // 3
+  "vision", // 6
+  "march",  // 5
+  "field",  // 5
+  "drum",   // 4
+  "wave",   // 4
+  "lizard", // 6
+  "beam",   // 4
+  "golf",   // 4
+  "night",  // 5
+  "team",   // 4
+  "breeze", // 6
+  "palm",   // 4
+  "quick",  // 5
+  "joyful", // 6
+  "tide",   // 4
+  "spark",  // 5
+  "arch",   // 4
+  "shine",  // 5
+  "ramp",   // 4
+  "ocean",  // 5
+  "vibe",   // 4
+  "crown",  // 5
+  "pet",    // 3
+  "blend"   // 5
+];
 
 
 
