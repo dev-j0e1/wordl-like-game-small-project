@@ -2,6 +2,7 @@
     margin: 0 auto;
     box-sizing: border-box;
     transition: all 1s ease;
+    user-select: none;
 }
 body {
     margin-top: 100px;

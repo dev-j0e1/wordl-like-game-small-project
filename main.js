@@ -121,6 +121,7 @@ function isLetterCorrect(index, letter, correctWord) {
 }
 
 
+
 window.addEventListener("load",e=>{
     document.querySelector("#reset").addEventListener("mousedown", e=>window.location.reload())
     let theWord = theList[getRandomNumber(0, theList.length-1)]
