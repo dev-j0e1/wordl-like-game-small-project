@@ -31,6 +31,9 @@ body {
     font-size: 40px;
 
 }
+#the-number {
+    font-size: 100px;
+}
 
 .correct {
     background: green;

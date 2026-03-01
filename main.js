@@ -122,6 +122,7 @@ function isLetterCorrect(index, letter, correctWord) {
 
 window.addEventListener("load",e=>{
     let theWord = theList[getRandomNumber(0, theList.length-1)]
+    document.querySelector("#the-number").innerText = theWord.length
     let numberOfGuesses = 5 
     console.log(theWord)
     let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
