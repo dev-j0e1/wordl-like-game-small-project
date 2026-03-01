@@ -147,6 +147,9 @@ window.addEventListener("load",e=>{
                 isLetterCorrect(currentGuess.letters.length-1, e.key, theWord)
             )
             if (currentGuess.letters.length === theWord.length) {
+                if (currentRowIndex === window.data.length-1) {
+                    document.querySelector("#answer").innerText = theWord
+                }
                 currentGuess.complete = true
             }
         }
