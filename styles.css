@@ -1,0 +1,24 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+body {
+    margin: 100px;
+}
+
+#grid-container {
+    height: 200px;
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+}
+
+.letter-tile {
+    border: 2px solid black;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    font-size: 40px;
+
+}
