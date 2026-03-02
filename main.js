@@ -141,7 +141,6 @@ window.addEventListener("load",e=>{
 
     renderWordToContainer(theWord, numberOfGuesses)
 
-
     document.addEventListener("keydown", e=>{
         if (alphabet.includes(e.key.toLowerCase()) && !window.gameover) {
             let currentRowIndex = findCurrentRowIndex(window.data)
