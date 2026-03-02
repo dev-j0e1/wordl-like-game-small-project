@@ -1,4 +1,8 @@
 async function fetchTextFile() {
+    /* Make the mexican audio play when I win and add 2 skeletons dancing either side (https://media.tenor.com/fQqJ1I8F5gsAAAAM/skeleton-dance-skeleton.gif)
+    var youWinAudio = new Audio("./YouWin.mp3")
+    youWinAudio.play()
+    */
     const url = "./bigWordList.txt"
     try {
         const response = await fetch(url);
@@ -120,7 +124,6 @@ async function fetchTextFile() {
                         document.querySelector("#reset").hidden = false
                         document.querySelector("#answer").innerText = theWord + face 
                     }
-
                 }
 
                 if (rowCompleted) {
