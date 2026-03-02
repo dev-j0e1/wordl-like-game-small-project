@@ -8,7 +8,7 @@ async function fetchTextFile() {
         }
 
         const fileContent = await response.text();
-        let allWords = fileContent.split("\n").filter(e=>e.length >= 3 && e.length < 7)
+        let allWords = fileContent.split("\n").filter(e=>e.length >= 3 && e.length < 6)
 
 
         function getRandomNumber(min, max) {
@@ -78,6 +78,11 @@ async function fetchTextFile() {
             if (e.key==="Enter" && window.gameover) {
                 window.location.reload()
             }
+        })
+
+
+        document.querySelector("#main-container").addEventListener("touchstart", e=>{
+            document.querySelector("#mobile-input").focus()
         })
 
 
