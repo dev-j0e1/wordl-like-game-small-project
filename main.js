@@ -120,6 +120,11 @@ function isLetterCorrect(index, letter, correctWord) {
     }
 }
 
+document.addEventListener("keydown", e=>{
+    if (e.key==="Enter" && window.gameover) {
+        window.location.reload()
+    }
+})
 
 
 window.addEventListener("load",e=>{
@@ -136,6 +141,7 @@ window.addEventListener("load",e=>{
 
     renderWordToContainer(theWord, numberOfGuesses)
 
+
     document.addEventListener("keydown", e=>{
         if (alphabet.includes(e.key.toLowerCase())) {
             let currentRowIndex = findCurrentRowIndex(window.data)
@@ -149,10 +155,12 @@ window.addEventListener("load",e=>{
             )
             if (currentGuess.letters.length === theWord.length) {
                 if (currentRowIndex === window.data.length-1) {
+                    window.gameover = true
                     document.querySelector("#answer").innerText = theWord + " :("
                 }
                 currentGuess.complete = true
                 if (currentGuess.letters.join('').toLowerCase() === theWord) {
+                    window.gameover = true
                     document.querySelector("#answer").innerText = theWord + " :)"
                 }
             }
