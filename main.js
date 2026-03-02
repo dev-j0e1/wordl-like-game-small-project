@@ -149,11 +149,11 @@ window.addEventListener("load",e=>{
             )
             if (currentGuess.letters.length === theWord.length) {
                 if (currentRowIndex === window.data.length-1) {
-                    document.querySelector("#answer").innerText = theWord
+                    document.querySelector("#answer").innerText = theWord + " :("
                 }
                 currentGuess.complete = true
                 if (currentGuess.letters.join('').toLowerCase() === theWord) {
-                    document.querySelector("#answer").innerText = theWord
+                    document.querySelector("#answer").innerText = theWord + " :)"
                 }
             }
         }
