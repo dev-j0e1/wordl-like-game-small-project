@@ -44,10 +44,9 @@ body {
 }
 
 #reset {
-    height: 50px;
-    width: 100px;
+    height: 5.5vw;
+    width: 20vw;
     margin-top: 30px;
-    
 }
 #answer {
     font-size: 100px;
