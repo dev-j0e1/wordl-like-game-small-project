@@ -143,7 +143,7 @@ window.addEventListener("load",e=>{
 
 
     document.addEventListener("keydown", e=>{
-        if (alphabet.includes(e.key.toLowerCase())) {
+        if (alphabet.includes(e.key.toLowerCase()) && !window.gameover) {
             let currentRowIndex = findCurrentRowIndex(window.data)
             let currentGuess = window.data[currentRowIndex] 
             currentGuess.letters.push(e.key.toUpperCase())
@@ -153,16 +153,23 @@ window.addEventListener("load",e=>{
                 e.key.toUpperCase(),
                 isLetterCorrect(currentGuess.letters.length-1, e.key, theWord)
             )
-            if (currentGuess.letters.length === theWord.length) {
-                if (currentRowIndex === window.data.length-1) {
+            let rowCompleted = currentGuess.letters.length === theWord.length
+            let gameWon = currentGuess.letters.join('').toLowerCase() === theWord
+            let gameLost = currentRowIndex === window.data.length-1 && !gameWon
+
+            function finishGame(won, lost) {
+                let face = won ? " :)" : lost ? " :(" : "" 
+                if (won || lost) {
                     window.gameover = true
-                    document.querySelector("#answer").innerText = theWord + " :("
+                    document.querySelector("#reset").hidden = false
+                    document.querySelector("#answer").innerText = theWord + face 
                 }
+
+            }
+
+            if (rowCompleted) {
                 currentGuess.complete = true
-                if (currentGuess.letters.join('').toLowerCase() === theWord) {
-                    window.gameover = true
-                    document.querySelector("#answer").innerText = theWord + " :)"
-                }
+                finishGame(gameWon, gameLost)
             }
         }
 
