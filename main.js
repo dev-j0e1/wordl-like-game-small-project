@@ -1,8 +1,5 @@
 async function fetchTextFile() {
-    /* Make the mexican audio play when I win and add 2 skeletons dancing either side (https://media.tenor.com/fQqJ1I8F5gsAAAAM/skeleton-dance-skeleton.gif)
-    var youWinAudio = new Audio("./YouWin.mp3")
-    youWinAudio.play()
-    */
+    //Make the mexican audio play when I win and add 2 skeletons dancing either side (https://media.tenor.com/fQqJ1I8F5gsAAAAM/skeleton-dance-skeleton.gif)
     const url = "./bigWordList.txt"
     try {
         const response = await fetch(url);
@@ -102,6 +99,8 @@ async function fetchTextFile() {
 
         renderWordToContainer(theWord, numberOfGuesses)
 
+        var youWinAudio = new Audio("./youwin.mp3")
+
         document.addEventListener("keydown", e=>{
             if (alphabet.includes(e.key.toLowerCase()) && !window.gameover) {
                 let currentRowIndex = findCurrentRowIndex(window.data)
@@ -123,6 +122,12 @@ async function fetchTextFile() {
                         window.gameover = true
                         document.querySelector("#reset").hidden = false
                         document.querySelector("#answer").innerText = theWord + face 
+                    }
+                    if (won) {
+                        youWinAudio.play()
+                        document.querySelector("#left").hidden = false
+                        document.querySelector("#right").hidden = false
+
                     }
                 }
 

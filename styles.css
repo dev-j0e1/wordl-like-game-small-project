@@ -52,3 +52,13 @@ body {
     font-size: 100px;
     text-align: center;
 }
+img {
+    position: absolute;
+    top: 200px;
+}
+#left {
+    left: 0px;
+}
+#right {
+    right: 0px;
+}
