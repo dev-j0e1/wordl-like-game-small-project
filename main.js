@@ -97,6 +97,8 @@ async function fetchTextFile() {
 
         document.querySelector("#reset").addEventListener("mousedown", e=>window.location.reload())
         let theWord = allWords[getRandomNumber(0, allWords.length-1)]
+        // delete this
+        console.log(theWord)
         document.querySelector("#the-number").innerText = theWord.length
         let numberOfGuesses = 5 
         let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
@@ -133,9 +135,13 @@ async function fetchTextFile() {
                         document.querySelector("#answer").innerText = theWord + face 
                     }
                     if (won) {
+                        document.querySelector("body").style.background = "black"
+                        document.querySelector("#answer").style.color = "white"
                         youWinAudio.play()
-                        document.querySelector("#left").hidden = false
-                        document.querySelector("#right").hidden = false
+                        setTimeout(()=>{
+                            document.querySelector("#left").hidden = false
+                            document.querySelector("#right").hidden = false
+                        }, 4000)
 
                     }
                 }
