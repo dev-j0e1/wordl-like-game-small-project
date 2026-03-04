@@ -86,6 +86,14 @@ async function fetchTextFile() {
             document.querySelector("#mobile-input").focus()
         })
 
+        document.querySelector("#exit-info").addEventListener("mousedown",e=>document.querySelector("#info-card").hidden=true)
+
+        document.querySelector("#info").addEventListener("mousedown",e=>{
+            let infoCard = document.querySelector("#info-card")
+            if (infoCard.hidden) {
+                infoCard.hidden = false
+            } 
+        })
 
         document.querySelector("#reset").addEventListener("mousedown", e=>window.location.reload())
         let theWord = allWords[getRandomNumber(0, allWords.length-1)]
@@ -100,6 +108,7 @@ async function fetchTextFile() {
         renderWordToContainer(theWord, numberOfGuesses)
 
         var youWinAudio = new Audio("./youwin.mp3")
+
 
         document.addEventListener("keydown", e=>{
             if (alphabet.includes(e.key.toLowerCase()) && !window.gameover) {

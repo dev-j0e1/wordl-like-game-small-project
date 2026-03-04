@@ -62,3 +62,41 @@ img {
 #right {
     right: 0px;
 }
+
+#info {
+    margin: 10px;
+    padding: 20px;
+    position: fixed;
+    right: 0px;
+    top: 0px;
+}
+
+#info-card {
+    width: 30vw;
+    position: fixed;
+    left: 35%;
+    top: 25%;
+    padding: 20px;
+    background: black;
+    color: white;
+}
+
+#info-card::before {
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: 50%;
+    position: fixed;
+    content: '';
+    left: 0px;
+    top: 0px;
+
+}
+
+#exit-info {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 10px;
+    
+}
