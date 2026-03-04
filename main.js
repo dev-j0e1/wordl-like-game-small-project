@@ -97,8 +97,6 @@ async function fetchTextFile() {
 
         document.querySelector("#reset").addEventListener("mousedown", e=>window.location.reload())
         let theWord = allWords[getRandomNumber(0, allWords.length-1)]
-        // delete this
-        console.log(theWord)
         document.querySelector("#the-number").innerText = theWord.length
         let numberOfGuesses = 5 
         let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
