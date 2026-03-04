@@ -135,8 +135,10 @@ async function fetchTextFile() {
                     if (won) {
                         document.querySelector("body").style.background = "black"
                         document.querySelector("#answer").style.color = "white"
+                        document.querySelector("#the-number").style.background = "white" 
                         youWinAudio.play()
                         setTimeout(()=>{
+
                             document.querySelector("#left").hidden = false
                             document.querySelector("#right").hidden = false
                         }, 4000)
