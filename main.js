@@ -1,5 +1,6 @@
 async function fetchTextFile() {
-    //Make the mexican audio play when I win and add 2 skeletons dancing either side (https://media.tenor.com/fQqJ1I8F5gsAAAAM/skeleton-dance-skeleton.gif)
+    // TODO: The approach with the mobile keybaord doesn't work for android users. Maybe make virtual keyboard for mobile?
+
     const url = "./bigWordList.txt"
     try {
         const response = await fetch(url);
