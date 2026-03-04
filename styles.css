@@ -69,6 +69,7 @@ img {
     position: fixed;
     right: 0px;
     top: 0px;
+    cursor: pointer;
 }
 
 #info-card {
@@ -94,9 +95,10 @@ img {
 }
 
 #exit-info {
+    cursor: pointer;
     position: absolute;
     right: 0px;
     top: 0px;
     margin: 10px;
-    
+
 }
