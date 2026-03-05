@@ -7,3 +7,5 @@ Just wanted to make a wordle game from scratch because why not
 
 
 Watch out for accidental keypresses and have fun!
+
+link for deployed game (https://dev-j0e1.github.io/wordl-like-game-small-project/)
