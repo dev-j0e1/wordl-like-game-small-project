@@ -1,3 +1,4 @@
+
 async function fetchTextFile() {
     // TODO: The approach with the mobile keybaord doesn't work for android users. Maybe make virtual keyboard for mobile?
 
@@ -82,9 +83,35 @@ async function fetchTextFile() {
             }
         })
 
+        function turnOffAllMobileTiles() {
+            [...document.querySelectorAll(".letter-tile")].forEach(e=>e.contentEditable=false)
+        }
+
+        function activateMobileTile(index) {
+            tile = document.querySelectorAll(".letter-tile")[index]
+            turnOffAllMobileTiles()
+            tile.contentEditable = true
+            tile.focus()
+        }
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
-            document.querySelector("#mobile-input").focus()
+            window.mobile = true
+            window.mobileIndex = 0
+            let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
+            turnOffAllMobileTiles()
+            activateMobileTile(window.mobileIndex)
+            window.mobileIndex++
+
+            document.addEventListener("keydown", e=>{
+                if (window.mobile && alphabet.includes(e.key.toLowerCase())) {
+                    // somehow integrate the below game logic in here or harmonise it somehow...
+                    turnOffAllMobileTiles()
+                    activateMobileTile(window.mobileIndex)
+                    window.mobileIndex++
+                }
+
+
+            })
         })
 
         document.querySelector("#exit-info").addEventListener("mousedown",e=>document.querySelector("#info-card").hidden=true)
@@ -112,7 +139,7 @@ async function fetchTextFile() {
 
 
         document.addEventListener("keydown", e=>{
-            if (alphabet.includes(e.key.toLowerCase()) && !window.gameover) {
+            if (alphabet.includes(e.key.toLowerCase()) && !window.gameover && !window.mobile) {
                 let currentRowIndex = findCurrentRowIndex(window.data)
                 let currentGuess = window.data[currentRowIndex] 
                 currentGuess.letters.push(e.key.toUpperCase())
