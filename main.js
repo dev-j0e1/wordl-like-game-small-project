@@ -83,36 +83,14 @@ async function fetchTextFile() {
             }
         })
 
-        function turnOffAllMobileTiles() {
-            [...document.querySelectorAll(".letter-tile")].forEach(e=>e.contentEditable=false)
-        }
-
-        function activateMobileTile(index) {
-            tile = document.querySelectorAll(".letter-tile")[index]
-            turnOffAllMobileTiles()
-            tile.contentEditable = true
-            tile.focus()
-        }
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
-            window.mobile = true
-            window.mobileIndex = 0
-            let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
-            activateMobileTile(window.mobileIndex)
-
-            document.addEventListener("keydown", e=>{
-                if (window.mobile && alphabet.includes(e.key.toLowerCase())) {
-                    // somehow integrate the below game logic in here or harmonise it somehow...
-                    window.mobileIndex != 0 && turnOffAllMobileTiles()
-                    activateMobileTile(window.mobileIndex)
-                    window.mobileIndex++
-                }
-
-
-            })
+                window.mobile = true
+                /* TODO: show or create a virtaul keybaord made from html, javascript etc. When the keys are pressed, they will simply 
+                 dispatch key events on the document, which will require minimal changes to the game structure. */
         })
 
-        // remove this once done testing
+        // TODO: remove this once done testing
         setInterval(()=>{
             document.querySelector("#testing-data").innerText = JSON.stringify(window.data).replaceAll("},", "},\n")
         })
@@ -143,7 +121,7 @@ async function fetchTextFile() {
 
 
         document.addEventListener("keydown", e=>{
-            if (alphabet.includes(e.key.toLowerCase()) && !window.gameover && !window.mobile) {
+            if (alphabet.includes(e.key.toLowerCase()) && !window.gameover){
                 let currentRowIndex = findCurrentRowIndex(window.data)
                 let currentGuess = window.data[currentRowIndex] 
                 currentGuess.letters.push(e.key.toUpperCase())
