@@ -8,6 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 3s ease;
+    touch-action: none;
 }
 
 #main-container {

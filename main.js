@@ -114,9 +114,12 @@ async function fetchTextFile() {
                     })
                 }
 
-                addKeysToRow(row1, document.querySelector("#r1"))
-                addKeysToRow(row2, document.querySelector("#r2"))
-                addKeysToRow(row3, document.querySelector("#r3"))
+
+                if (!document.querySelector(".virtual-key")) {
+                    addKeysToRow(row1, document.querySelector("#r1"))
+                    addKeysToRow(row2, document.querySelector("#r2"))
+                    addKeysToRow(row3, document.querySelector("#r3"))
+                }
 
         })
 
