@@ -86,14 +86,40 @@ async function fetchTextFile() {
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
                 window.mobile = true
+                let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(65+i))
+                console.log("mobile touch")
                 /* TODO: show or create a virtaul keybaord made from html, javascript etc. When the keys are pressed, they will simply 
                  dispatch key events on the document, which will require minimal changes to the game structure. */
+                let row1 = [..."QWERTYUIOP"]
+                let row2 = [..."ASDFGHJKL"]
+                let row3 = [..."ZXCVBNM"]
+
+                function createNewKey(letter) {
+                    let newKey = document.createElement("button")
+                    newKey.innerText = letter
+                    newKey.classList.add("virtual-key")
+                    newKey.addEventListener("click", e=>{
+                        let newEvent = new KeyboardEvent("keydown", {
+                            key: letter,
+                            bubbles: true
+                        })
+                        document.dispatchEvent(newEvent)
+                    })
+                    return newKey
+                }
+
+                function addKeysToRow(letters, row) {
+                    letters.forEach(e=>{
+                        row.append(createNewKey(e))
+                    })
+                }
+
+                addKeysToRow(row1, document.querySelector("#r1"))
+                addKeysToRow(row2, document.querySelector("#r2"))
+                addKeysToRow(row3, document.querySelector("#r3"))
+
         })
 
-        // TODO: remove this once done testing
-        setInterval(()=>{
-            document.querySelector("#testing-data").innerText = JSON.stringify(window.data).replaceAll("},", "},\n")
-        })
 
 
         document.querySelector("#exit-info").addEventListener("mousedown",e=>document.querySelector("#info-card").hidden=true)
