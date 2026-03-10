@@ -86,6 +86,7 @@ async function fetchTextFile() {
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
                 window.mobile = true
+                document.querySelector("#virtual-keyboard").hidden = false
                 let row1 = [..."QWERTYUIOP"]
                 let row2 = [..."ASDFGHJKL"]
                 let row3 = [..."ZXCVBNM"]
