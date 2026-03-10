@@ -98,9 +98,7 @@ async function fetchTextFile() {
             window.mobile = true
             window.mobileIndex = 0
             let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))
-            turnOffAllMobileTiles()
             activateMobileTile(window.mobileIndex)
-            window.mobileIndex++
 
             document.addEventListener("keydown", e=>{
                 if (window.mobile && alphabet.includes(e.key.toLowerCase())) {
