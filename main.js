@@ -105,7 +105,7 @@ async function fetchTextFile() {
             document.addEventListener("keydown", e=>{
                 if (window.mobile && alphabet.includes(e.key.toLowerCase())) {
                     // somehow integrate the below game logic in here or harmonise it somehow...
-                    turnOffAllMobileTiles()
+                    window.mobileIndex != 0 && turnOffAllMobileTiles()
                     activateMobileTile(window.mobileIndex)
                     window.mobileIndex++
                 }
@@ -113,6 +113,12 @@ async function fetchTextFile() {
 
             })
         })
+
+        // remove this once done testing
+        setInterval(()=>{
+            document.querySelector("#testing-data").innerText = JSON.stringify(window.data).replaceAll("},", "},\n")
+        })
+
 
         document.querySelector("#exit-info").addEventListener("mousedown",e=>document.querySelector("#info-card").hidden=true)
 
