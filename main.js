@@ -86,10 +86,6 @@ async function fetchTextFile() {
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
                 window.mobile = true
-                let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(65+i))
-                console.log("mobile touch")
-                /* TODO: show or create a virtaul keybaord made from html, javascript etc. When the keys are pressed, they will simply 
-                 dispatch key events on the document, which will require minimal changes to the game structure. */
                 let row1 = [..."QWERTYUIOP"]
                 let row2 = [..."ASDFGHJKL"]
                 let row3 = [..."ZXCVBNM"]
