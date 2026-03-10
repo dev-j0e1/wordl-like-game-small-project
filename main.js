@@ -86,7 +86,7 @@ async function fetchTextFile() {
 
         document.querySelector("#main-container").addEventListener("touchstart", e=>{
                 window.mobile = true
-                document.querySelector("#virtual-keyboard").hidden = false
+                document.querySelector("#virtual-keyboard").style.display = "block" 
                 let row1 = [..."QWERTYUIOP"]
                 let row2 = [..."ASDFGHJKL"]
                 let row3 = [..."ZXCVBNM"]
@@ -133,6 +133,7 @@ async function fetchTextFile() {
 
         document.querySelector("#reset").addEventListener("mousedown", e=>window.location.reload())
         let theWord = allWords[getRandomNumber(0, allWords.length-1)]
+        console.log(theWord)
         document.querySelector("#the-number").innerText = theWord.length
         let numberOfGuesses = 5 
         let alphabet = Array.from({length: 26},(_,i)=>String.fromCharCode(97+i))

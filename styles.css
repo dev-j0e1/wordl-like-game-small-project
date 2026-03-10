@@ -5,6 +5,9 @@
     user-select: none;
     touch-action: none;
 }
+button {
+    cursor: pointer;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -40,11 +43,31 @@ body {
 
 .correct {
     background: rgb(1,129,0);
+    position: relative;
 }
+/*
+.correct::after {
+    content: 'green';
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+ */
 
 .almost {
     background: rgb(255,255,0);
+    position: relative;
 }
+/*
+.almost::after {
+    content: 'yellow';
+    font-size: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+*/
 
 #reset {
     height: 5.5vw;
@@ -130,3 +153,21 @@ img {
     display:flex;
     flex-direction: column;
 }
+
+#settings-button {
+    position: absolute;
+    padding: 40px;
+    margin: 10px;
+    left: 0px;
+    top: 0px;
+}
+
+#settings-form {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
