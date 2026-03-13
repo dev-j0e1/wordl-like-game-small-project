@@ -127,6 +127,6 @@ img {
     left: 0;
     height: 40vh;
     width: 100%;
-    display:flex;
+    display:flex !important;
     flex-direction: column;
 }
